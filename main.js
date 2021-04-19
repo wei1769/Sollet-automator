@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sollet auto clicker
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  auto approve and connet
 // @author       wei1769.eth
 // @match        https://www.sollet.io/
@@ -11,12 +11,19 @@
 
 var run = function(){
     var approve = document.getElementsByClassName('MuiButtonBase-root MuiButton-root MuiButton-contained').item(0);
-    var connet = document.getElementsByClassName('MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary').item(0);
+    var connect = document.getElementsByClassName('MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary').item(0);
+    
     if ( approve != null ){
+        
         approve.click();
     }
-    if (connet != null){
-        connet.click();
+    if (connect != null){
+        var connectString = connect.getElementsByClassName('MuiButton-label').item(0) 
+        if (connectString.innerText == "CONNECT"){
+
+            connect.click();
+        }    
     }
+   
 }
-setInterval(run,10);
+setInterval(run,10)
