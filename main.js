@@ -12,9 +12,7 @@
 var run = function(){
     var approve = document.getElementsByClassName('MuiButtonBase-root MuiButton-root MuiButton-contained').item(0);
     var connect = document.getElementsByClassName('MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary').item(0);
-    
     if ( approve != null ){
-        
         approve.click();
     }
     if (connect != null){
@@ -22,8 +20,7 @@ var run = function(){
         if (connectString.innerText == "CONNECT"){
 
             connect.click();
-        }    
+        }
     }
-   
 }
 setInterval(run,10)
